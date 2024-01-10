@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="Chankya.css">
+  <title>Batches</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .button {
+      background-color: #008CBA;
+      border: none;
+      color: white;
+      padding: 15px
+ 
+32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px
+ 
+2px;
+      cursor: pointer;
+    }
+
+    .btn-group {
+      display: inline-flex;
+    }
+
+    .btn-group .button {
+      border-radius: 0;
+    }
+
+    .btn-group .button:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    .btn-group .button:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+    .btn-group .button:hover {
+      background-color: #0077BD;
+    }
+
+    .btn-group .button.active {
+      background-color: #0066A3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Batches</h1>
+
+  <div class="btn-group">
+    <button class="button active">All</button>
+    <button class="button">Full Stack Development & Software Development</button>
+    <button class="button">Data Science</button>
+    <button class="button">Data Analysis</button>
+    <button class="button">Python</button>
+  </div>
+
+  <div class="batch-list">
+    <div class="batch">
+      <h2>October23 AST Batch</h2>
+      <p>This is a 3-month batch that will teach you the fundamentals of full stack development and software development.</p>
+      <button class="button">Request to Join</button>
+    </div>
+
+    <div class="batch">
+      <h2>June AST Batch</h2>
+      <p>This is a 6-month batch that will teach you everything you need to know to become a data scientist.</p>
+      <button class="button">Request to Join</button>
+    </div>
+
+    <div class="batch">
+      <h2>January Data Science Batch</h2>
+      <p>This is a 3-month batch that will teach you the fundamentals of data science.</p>
+      <button class="button">Request to Join</button>
+    </div>
+
+    <div class="batch">
+      <h2>December DATA Batch</h2>
+      <p>This is a 6-month batch that will teach you everything you need to know to become a data analyst.</p>
+      <button class="button">Request to Join</button>
+    </div>
+  </div>
+</body>
+</html>
