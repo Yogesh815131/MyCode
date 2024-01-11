@@ -1,1 +1,19 @@
-<p>databinding works!</p>
+<p>{{title}}</p>
+<p>{{a}}</p>
+
+<input type="text" value="{{city}}"><!-- {{city}} ==> String interpulation -->
+<br>
+<input type="text" [value]="myName" (keyup)="showdata($event)"><!-- [value] ==> One way datebinding-->
+{{myName}}
+<br>
+<input type="text" disabled="!{{isDisable}}">
+<br>
+<input type="text" [disabled]="!isDisable">
+<br>
+<button (click)="submit()">Submit</button>
+<p>{{name}}</p>
+
+<br>
+<input type="text" [(ngModel)]="subject">Enter the subject
+<br>
+{{subject}}
