@@ -7,3 +7,8 @@
     <li *ngFor="let items of listItem">{{items}}</li>
 </ul>
 
+<div [ngStyle]="{backgroundColor : getColor()}">i like india</div>
+
+<div [class.div-container]="journey == 'admin'"
+    [class.div-container1]="journey == 'user'"
+    [class.div-container2]="journey == 'woner'">i like india</div>

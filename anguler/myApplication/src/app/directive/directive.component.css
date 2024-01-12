@@ -4,3 +4,13 @@
     border: 3px solid black;
     background-color: aquamarine;
 }
+
+.div-container1{
+    background-color: aqua;
+    font-size: 25px;
+}
+
+.div-container2{
+    background-color: rgb(205, 59, 193);
+    font-size: 25px;
+}

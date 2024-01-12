@@ -9,7 +9,8 @@ const routes: Routes = [
   { path : "", component: HomeComponent},
   { path : "databinding", component : DatabindingComponent},
   { path : "test", component : TestComponent},
-  { path : "toggle", component : DirectiveComponent}
+  { path : "toggle", component : DirectiveComponent},
+  { path : "user", loadChildren:()=>import("./user/user.module").then(m=>m.UserModule)}
 ];
 
 @NgModule({
