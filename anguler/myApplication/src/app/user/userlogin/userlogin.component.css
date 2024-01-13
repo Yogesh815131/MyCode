@@ -1,0 +1,28 @@
+
+.form-container{
+    background-color: #F2F2F2;
+    height: 300px;
+    width: 300px;
+    border: 2px solid rgb(216, 208, 208);
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 5px 5px 10px 0px rgba(76, 74, 74, 0.2);
+    position: relative;
+    top: 50px;
+}
+
+.form-container input{
+    margin-top: 5px;
+
+}
+
+.error-sms{
+    position: relative;
+    margin: 0;
+    color: red;
+}
+
+.passLabel{
+    margin-top: 5px;
+}

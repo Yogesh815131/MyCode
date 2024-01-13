@@ -10,7 +10,8 @@ const routes: Routes = [
   { path : "databinding", component : DatabindingComponent},
   { path : "test", component : TestComponent},
   { path : "toggle", component : DirectiveComponent},
-  { path : "user", loadChildren:()=>import("./user/user.module").then(m=>m.UserModule)}
+  { path : "user", loadChildren:()=>import("./user/user.module").then(m=>m.UserModule)},
+  { path : "admin", loadChildren:()=>import("./admin/admin.module").then(mod=>mod.AdminModule)}
 ];
 
 @NgModule({

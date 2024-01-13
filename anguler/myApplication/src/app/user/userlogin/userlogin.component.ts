@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class UserloginComponent {
 
+  constructor(){}
+
+  login(data:any){
+    console.log(data);
+    
+  }
 }

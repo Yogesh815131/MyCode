@@ -18,4 +18,8 @@ export class HomeComponent {
   toggel(){
     this.router.navigateByUrl("toggle")
   }
+
+  adminLanding(){
+    this.router.navigateByUrl("/admin/adminlanding")
+  }
 }
