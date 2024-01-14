@@ -1,0 +1,13 @@
+.form-field{
+    width: 250px;
+}
+
+.form-container{
+    position: relative;
+    margin-left: 550px;
+    top: 30px;
+}
+
+.btn{
+    margin-left: 75px;
+}

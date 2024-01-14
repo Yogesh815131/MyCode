@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { FormsModule } from '@angular/forms';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     UserloginComponent,
@@ -15,7 +16,11 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     UserRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatInputModule, 
+    MatRadioModule
   ]
 })
 export class UserModule { }

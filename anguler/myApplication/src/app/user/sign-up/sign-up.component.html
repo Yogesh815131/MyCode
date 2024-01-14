@@ -1,1 +1,37 @@
-<p>sign-up works!</p>
+<div class="form-container">
+    <form [formGroup]="signUpForm">
+
+        <mat-form-field class="form-field">
+            <mat-label>Full Name</mat-label>
+            <input type="text" matInput formControlName="fullName">
+        </mat-form-field><br>
+
+        <mat-form-field class="form-field">
+            <mat-label>Mob No</mat-label>
+            <input type="text" matInput formControlName="Mob">
+        </mat-form-field><br>
+
+        <mat-form-field class="form-field">
+            <mat-label>Pan Card</mat-label>
+            <input type="text" matInput formControlName="Pan">
+        </mat-form-field><br>
+
+        <mat-radio-group aria-label="Gender" formControlName="Gender">
+            <mat-label>Gender</mat-label>
+            <mat-radio-button>Male</mat-radio-button>
+            <mat-radio-button>female</mat-radio-button>
+        </mat-radio-group><br>
+
+        <mat-form-field class="form-field">
+            <mat-label>Password</mat-label>
+            <input type="text" matInput formControlName="password">
+        </mat-form-field><br>
+
+        <mat-form-field class="form-field">
+            <mat-label>Confirm Password</mat-label>
+            <input type="text" matInput formControlName="confirmPass">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="accent" class="btn">Submit</button>
+    </form>
+</div>

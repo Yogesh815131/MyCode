@@ -2,18 +2,23 @@
 
 <div class="form-container">
     <form #loginForm="ngForm">
-        <h2>Login Form</h2>
+        <h3>Login Form</h3>
         <label>User Name</label><br>
-        <input type="text" #userName="ngModel" ngModel name="uName" required pattern="^[a-zA-Z]*$" minlength="6">
+        <input type="text" #userName="ngModel" ngModel name="uName" required pattern="^[a-zA-Z ]*$" minlength="6">
         <div class="error-sms" *ngIf="userName?.errors?.['required'] && userName?.touched">*User Name is Required</div>
         <div class="error-sms" *ngIf="userName?.errors?.['pattern'] && !userName?.errors?.['minlength']">User Name must be Alphabets</div>
         <div class="error-sms" *ngIf="userName?.errors?.['minlength']">minimum 6 char required</div>
         <br>
         <label>Password</label><br>
-        <input type="password" #pass="ngModel" ngModel name="password" required>
+        <input [type]="isShowPass? 'text' : 'password'" #pass="ngModel" ngModel name="password" required>
+        <i class="bi bi-eye-fill iconEye" *ngIf="!isShowPass && pass?.touched" (click)="toShowPassWord()"></i>
+        <i class="bi bi-eye-slash-fill iconEye" *ngIf="isShowPass" (click)="toShowPassWord()" ></i>
         <div class="error-sms" *ngIf="pass?.errors?.['required'] && pass?.touched">password is required</div>
         <br>
         <br>
         <button (click)="login(loginForm.value)">Submit</button>
+        <br>
+        <a routerLink="/user/usersignup">Create Account</a>
     </form>
 </div>
+

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,4 +8,22 @@ import { Component } from '@angular/core';
 })
 export class SignUpComponent {
 
+  signUpForm! : FormGroup;
+
+  constructor(private formBuilder : FormBuilder){}
+
+  ngOnInit(){
+    this.formDetails();
+  }
+
+  formDetails(){
+    this.signUpForm = this.formBuilder.group({
+      fullName:[],
+      Mob:[],
+      Pan:[],
+      Gender:[],
+      password:[],
+      confirmPass:[]
+    })
+  }
 }

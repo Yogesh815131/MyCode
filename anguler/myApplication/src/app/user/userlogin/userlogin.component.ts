@@ -7,10 +7,16 @@ import { Component } from '@angular/core';
 })
 export class UserloginComponent {
 
+  isShowPass = false;
   constructor(){}
 
   login(data:any){
+    let UserName = data.uName.replace(/\s+/, ' ');
     console.log(data);
     
+  }
+
+  toShowPassWord(){
+    this.isShowPass = !this.isShowPass;
   }
 }
