@@ -4,17 +4,25 @@
         <mat-form-field class="form-field">
             <mat-label>Full Name</mat-label>
             <input type="text" matInput formControlName="fullName">
+            <mat-error *ngIf="signUpForm.get('fullName')?.errors?.['required'] && signUpForm.get('fullName')?.touched">Full Name is required</mat-error>
+            <mat-error *ngIf="signUpForm.get('fullName')?.errors?.['pattern']">Only Alphabets </mat-error>
         </mat-form-field><br>
 
         <mat-form-field class="form-field">
             <mat-label>Mob No</mat-label>
             <input type="text" matInput formControlName="Mob">
+            <mat-error *ngIf="signUpForm.get('Mob')?.errors?.['pattern']">Invalid Pattern</mat-error>
+            <mat-error *ngIf="signUpForm.get('Mob')?.errors?.['maxlength']">Maximum 10 Number</mat-error>
+            <mat-error>Number is required</mat-error>
         </mat-form-field><br>
 
         <mat-form-field class="form-field">
             <mat-label>Pan Card</mat-label>
             <input type="text" matInput formControlName="Pan">
+            <mat-error *ngIf="signUpForm.get('Pan')?.errors?.['pattern']">Invalid Pattern</mat-error>
+            <mat-error *ngIf="signUpForm.get('Pan')?.errors?.['required']">Pan Number is required</mat-error>
         </mat-form-field><br>
+        <!-- CBMPJ0420J -->
 
         <mat-radio-group aria-label="Gender" formControlName="Gender">
             <mat-label>Gender</mat-label>
@@ -25,11 +33,15 @@
         <mat-form-field class="form-field">
             <mat-label>Password</mat-label>
             <input type="text" matInput formControlName="password">
+            <mat-error *ngIf="signUpForm.get('password')?.errors?.['pattern']">Invalid Pattern</mat-error>
+            <mat-error *ngIf="signUpForm.get('password')?.errors?.['required'] && signUpForm.get('password')?.touched">Password is required</mat-error>
         </mat-form-field><br>
 
         <mat-form-field class="form-field">
             <mat-label>Confirm Password</mat-label>
             <input type="text" matInput formControlName="confirmPass">
+            <mat-error *ngIf="signUpForm.get('password')?.errors?.['pattern']">Invalid Pattern</mat-error>
+            <mat-error *ngIf="signUpForm.get('password')?.errors?.['required'] && signUpForm.get('password')?.touched">Password is required</mat-error>
         </mat-form-field>
         <br>
         <button mat-raised-button color="accent" class="btn">Submit</button>

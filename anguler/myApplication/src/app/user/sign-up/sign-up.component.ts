@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,12 +18,12 @@ export class SignUpComponent {
 
   formDetails(){
     this.signUpForm = this.formBuilder.group({
-      fullName:[],
-      Mob:[],
-      Pan:[],
+      fullName:['', [Validators.required, Validators.pattern("^[a-zA-Z ]*$")]],
+      Mob:[null, [Validators.pattern("^[0-9]*$"), Validators.maxLength(10), Validators.required]],
+      Pan:['', [Validators.pattern("^[A-Z]{5}[0-9]{4}[A-Z]$"), Validators.required]],
       Gender:[],
-      password:[],
-      confirmPass:[]
+      password:['', [Validators.pattern("^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$"), Validators.required]],
+      confirmPass:['', [Validators.pattern("^(?=.*[a-z])(?=.*\d)(?=.*[@!$&%*?])[a-zA-Z\d@!$&%*?]{8,12}$"), Validators.required]]
     })
   }
 }
