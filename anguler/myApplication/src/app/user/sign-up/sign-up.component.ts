@@ -9,6 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignUpComponent {
 
   signUpForm! : FormGroup;
+  isShowPass = false;
+  isShowConfirmPass = false;
+  isMatch = false;
 
   constructor(private formBuilder : FormBuilder){}
 
@@ -25,5 +28,22 @@ export class SignUpComponent {
       password:['', [Validators.pattern("^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$"), Validators.required]],
       confirmPass:['', [Validators.pattern("^(?=.*[a-z])(?=.*\d)(?=.*[@!$&%*?])[a-zA-Z\d@!$&%*?]{8,12}$"), Validators.required]]
     })
+  }
+
+  showPassword(){
+    this.isShowPass = !this.isShowPass;
+  }
+  showConPassword(){
+    this.isShowConfirmPass = !this.isShowConfirmPass;
+  }
+
+  passMatch(){
+    if(this.signUpForm.value.confirmPass != null){
+      if (this.signUpForm.value.password == this.signUpForm.value.confirmPass) {
+        this.isMatch = true;
+      }else{
+        this.isMatch = false;
+      }
+    }
   }
 }

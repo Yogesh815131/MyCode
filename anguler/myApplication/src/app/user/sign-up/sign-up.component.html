@@ -32,16 +32,22 @@
 
         <mat-form-field class="form-field">
             <mat-label>Password</mat-label>
-            <input type="text" matInput formControlName="password">
+            <input [type] = "isShowPass ? 'text' : 'password'" matInput formControlName="password" (keyup)="passMatch()">
             <mat-error *ngIf="signUpForm.get('password')?.errors?.['pattern']">Invalid Pattern</mat-error>
             <mat-error *ngIf="signUpForm.get('password')?.errors?.['required'] && signUpForm.get('password')?.touched">Password is required</mat-error>
+            <mat-icon matSuffix *ngIf="!isShowPass" (click)="showPassword()">visibility</mat-icon>
+            <mat-icon matSuffix *ngIf="isShowPass" (click)="showPassword()">visibility_off</mat-icon>
         </mat-form-field><br>
+        
 
         <mat-form-field class="form-field">
             <mat-label>Confirm Password</mat-label>
-            <input type="text" matInput formControlName="confirmPass">
-            <mat-error *ngIf="signUpForm.get('password')?.errors?.['pattern']">Invalid Pattern</mat-error>
-            <mat-error *ngIf="signUpForm.get('password')?.errors?.['required'] && signUpForm.get('password')?.touched">Password is required</mat-error>
+            <input [type]="isShowConfirmPass? 'text' : 'password'" matInput formControlName="confirmPass">
+            <mat-error *ngIf="signUpForm.get('confirmPass')?.errors?.['pattern']">Invalid Pattern</mat-error>
+            <mat-error *ngIf="signUpForm.get('confirmPass')?.errors?.['required'] && signUpForm.get('confirmPass')?.touched">Password is required</mat-error>
+            <mat-icon matSuffix *ngIf="!isShowConfirmPass" (click)="showConPassword()">visibility</mat-icon>
+            <mat-icon matSuffix *ngIf="isShowConfirmPass" (click)="showConPassword()">visibility_off</mat-icon>
+            <mat-error *ngIf="!isMatch && !signUpForm.get('confirmPass')?.errors?.['required'] && !signUpForm.get('confirmPass')?.errors?.['pattern']">Password is not match</mat-error>
         </mat-form-field>
         <br>
         <button mat-raised-button color="accent" class="btn">Submit</button>
