@@ -10,6 +10,8 @@ import { TestComponent } from './test/test.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserSuccessComponent } from './user-success/user-success.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { UserSuccessComponent } from './user-success/user-success.component';
     DatabindingComponent,
     TestComponent,
     DirectiveComponent,
-    UserSuccessComponent
+    UserSuccessComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
