@@ -21,13 +21,14 @@ export class SignUpComponent {
 
   formDetails(){
     this.signUpForm = this.formBuilder.group({
-      fullName:['', [Validators.required, Validators.pattern("^[a-zA-Z ]*$")]],
+      fullName:['', [Validators.required, Validators.pattern("^[a-zA-Z ]*$"), this.whiteSpaceRemoveValidator]],
       Mob:[null, [Validators.pattern("^[0-9]*$"), Validators.maxLength(10), Validators.required]],
       Pan:['', [Validators.pattern("^[A-Z]{5}[0-9]{4}[A-Z]$"), Validators.required]],
       Gender:[],
-      password:['', [Validators.pattern("^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$"), Validators.required]],
-      confirmPass:['', [Validators.pattern("^(?=.*[a-z])(?=.*\d)(?=.*[@!$&%*?])[a-zA-Z\d@!$&%*?]{8,12}$"), Validators.required]]
-    })
+      password:['', [Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,12}$/), Validators.required]],
+      confirmPass:['', [Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,12}$/), Validators.required]],
+      tc:[ ,[Validators.requiredTrue]]
+    })                                   
   }
 
   showPassword(){
@@ -39,11 +40,19 @@ export class SignUpComponent {
 
   passMatch(){
     if(this.signUpForm.value.confirmPass != null){
-      if (this.signUpForm.value.password == this.signUpForm.value.confirmPass) {
-        this.isMatch = true;
+      if (this.signUpForm.value.password === this.signUpForm.value.confirmPass) {
+         this.isMatch = false;
       }else{
-        this.isMatch = false;
+        this.isMatch = true;
       }
     }
+  }
+
+  submit(){
+    console.log("This signUpForm Value ", this.signUpForm.value);
+  }
+
+  whiteSpaceRemoveValidator(includeValue:any){
+    return includeValue?.value?.includes('  ')?{'whiteSpaceError':true}:null;
   }
 }

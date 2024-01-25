@@ -6,6 +6,7 @@
             <input type="text" matInput formControlName="fullName">
             <mat-error *ngIf="signUpForm.get('fullName')?.errors?.['required'] && signUpForm.get('fullName')?.touched">Full Name is required</mat-error>
             <mat-error *ngIf="signUpForm.get('fullName')?.errors?.['pattern']">Only Alphabets </mat-error>
+            <mat-error *ngIf="signUpForm.get('fullName')?.errors?.['whiteSpaceError']">should not include more than one white space</mat-error>
         </mat-form-field><br>
 
         <mat-form-field class="form-field">
@@ -26,13 +27,13 @@
 
         <mat-radio-group aria-label="Gender" formControlName="Gender">
             <mat-label>Gender</mat-label>
-            <mat-radio-button>Male</mat-radio-button>
-            <mat-radio-button>female</mat-radio-button>
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="female">female</mat-radio-button>
         </mat-radio-group><br>
 
         <mat-form-field class="form-field">
             <mat-label>Password</mat-label>
-            <input [type] = "isShowPass ? 'text' : 'password'" matInput formControlName="password" (keyup)="passMatch()">
+            <input [type] = "isShowPass ? 'text' : 'password'" (keyup)="passMatch()" matInput formControlName="password">
             <mat-error *ngIf="signUpForm.get('password')?.errors?.['pattern']">Invalid Pattern</mat-error>
             <mat-error *ngIf="signUpForm.get('password')?.errors?.['required'] && signUpForm.get('password')?.touched">Password is required</mat-error>
             <mat-icon matSuffix *ngIf="!isShowPass" (click)="showPassword()">visibility</mat-icon>
@@ -42,14 +43,17 @@
 
         <mat-form-field class="form-field">
             <mat-label>Confirm Password</mat-label>
-            <input [type]="isShowConfirmPass? 'text' : 'password'" matInput formControlName="confirmPass">
+            <input [type]="isShowConfirmPass? 'text' : 'password'" (keyup)="passMatch()" matInput formControlName="confirmPass" >
             <mat-error *ngIf="signUpForm.get('confirmPass')?.errors?.['pattern']">Invalid Pattern</mat-error>
             <mat-error *ngIf="signUpForm.get('confirmPass')?.errors?.['required'] && signUpForm.get('confirmPass')?.touched">Password is required</mat-error>
             <mat-icon matSuffix *ngIf="!isShowConfirmPass" (click)="showConPassword()">visibility</mat-icon>
             <mat-icon matSuffix *ngIf="isShowConfirmPass" (click)="showConPassword()">visibility_off</mat-icon>
-            <mat-error *ngIf="!isMatch && !signUpForm.get('confirmPass')?.errors?.['required'] && !signUpForm.get('confirmPass')?.errors?.['pattern']">Password is not match</mat-error>
         </mat-form-field>
+        <mat-error *ngIf=" isMatch && !signUpForm.get('confirmPass')?.errors?.['required'] && !signUpForm.get('confirmPass')?.errors?.['pattern']">Password is not match</mat-error>
+
         <br>
-        <button mat-raised-button color="accent" class="btn">Submit</button>
+        <input type="checkbox" formControlName="tc"> I agree terms and condions
+        <br>
+        <button mat-raised-button color="accent" class="btn" [disabled]="!signUpForm.valid" (click)="submit()">Submit</button>
     </form>
 </div>

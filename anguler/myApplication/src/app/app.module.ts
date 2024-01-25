@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { TestComponent } from './test/test.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserSuccessComponent } from './user-success/user-success.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     DatabindingComponent,
     TestComponent,
-    DirectiveComponent
+    DirectiveComponent,
+    UserSuccessComponent
   ],
   imports: [
     BrowserModule,
