@@ -1,3 +1,14 @@
 <p>child works!</p>
 {{parentName}}
 <button (click)="datafromchildparent()">click here</button>
+<!-- 
+    data passing child to parent component fist of child child.component.ts file create one variable 
+    @Output dataFromchild = new EventEmitter<any>() create this type @Output decorator use to data accessing 
+        to out of child component EventEmitter using this method to cumunication to component child to parent 
+        create one local variable state assign value and create a function datafromchild parent() this function use 
+        assing value state varialbe to dataFromchild and this function trigger button child.component.html file 
+        next step parent component.ts create one variable statefromchild and parent.component.html file 
+        use child selector in selector property bind (datafromchild)=datacomingfromchild($event)
+        this function declare from parent component in this function assign value from statefromchild 
+        
+ -->
