@@ -1,5 +1,6 @@
 <p>parent works!</p>
+{{stateFromChild}}
 
 
 ---------------------------------------------------------------------------
-<app-child [parentName]="name"></app-child>
+<app-child [parentName]="name" (dataFromChild)="dataComingFromchild($event)"></app-child>
