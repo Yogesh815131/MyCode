@@ -1,0 +1,21 @@
+<p>sub1 works!</p>
+<button (click)="sub1()">click here</button>
+<br><br>
+---------------------------------------------------
+<br><br>
+<app-sub2></app-sub2>
+<br><br>
+----------------------------------------------------
+<br><br>
+<app-sub3></app-sub3>
+
+<!-- 
+    passing data one component to multiple component first of create variable sub1 student and create in service
+    variable "studentData = new Subject<any>();" and sub1 constructor create service variable dataservice 
+    "priavte dataService:DataService" sub1 component.ts create one function sub1() assign value student value 
+    studentData "this.dataservice.studentData.next(this.student);" next sub1 component.html create button trigger 
+    function sub1() assign value all component and in sub2 component first create variable 
+    stddata2 and in constructor create variable "private dataservice:DataService" create method OnInit() in 
+    method assign value to stddata1 "OnInit(){this.dataService.subcribe(data=>{this.stddata=data})}"
+    and same process sub2 component.
+ -->

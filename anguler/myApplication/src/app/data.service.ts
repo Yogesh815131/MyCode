@@ -6,6 +6,6 @@ import { Subject } from 'rxjs';
 })
 export class DataService {
   userName:any;
-  // studentData = new Subject<any>();
+  studentData = new Subject<any>();
   constructor() { }
 }
