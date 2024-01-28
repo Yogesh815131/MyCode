@@ -1,0 +1,20 @@
+<p>viewchild1 works! {{name}}</p>
+<app-viewchild2></app-viewchild2>
+<button (click)="getData()">click here</button>
+
+<div #div_container>
+    yogesh live in mumbai
+</div>
+
+<!-- 
+    viewchild1 create variable name and viewchild2 create variable cityname and intialize this name viewchild1
+    create @Viewchild decorator property "@Viewchild(Viewchild2Component) Viewchild2copm! : ViewChild2Component"
+    and create one function getData() in function assign value to name "this.name = this.viewchild2comp.cityname"
+    this function trigger one button 
+ -->
+
+ <!-- 
+    change html viewchild1 create property "@Viewchild("div_container") eleref! : ElementRef" and component.html
+    create one div write some text next component.ts create function ngAfterViewInit() in function assign 
+    change div text "this.eleref.nativeElement.innerHTML ='your change text write here'"
+  -->

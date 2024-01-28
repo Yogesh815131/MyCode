@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from '../data.service';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-sub1',
@@ -7,9 +7,12 @@ import { DataService } from '../data.service';
   styleUrls: ['./sub1.component.css']
 })
 export class Sub1Component {
+
   student = "Yogesh Jadhav";
-  constructor( private dataservice:DataService){}
+  constructor(private dataService : DataService){}
+
   sub1(){
-    this.dataservice.studentData.next(this.student);
+    this.dataService.studentData.next(this.student)
   }
+
 }

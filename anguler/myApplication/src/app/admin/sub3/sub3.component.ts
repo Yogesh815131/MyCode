@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from '../data.service';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-sub3',
@@ -7,12 +7,12 @@ import { DataService } from '../data.service';
   styleUrls: ['./sub3.component.css']
 })
 export class Sub3Component {
-  stddata3:any
-  constructor(private dataService:DataService){}
+  stsddata3:any
+  constructor(private dataSevice : DataService){}
 
   ngOnInit(){
-    this.dataService.studentData.subscribe(data=>{
-      this.stddata3 = data;
+    this.dataSevice.studentData.subscribe(data=>{
+      this.stsddata3 = data
     })
   }
 }
