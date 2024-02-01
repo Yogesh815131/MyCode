@@ -6,6 +6,7 @@ import { TestComponent } from './test/test.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 const routes: Routes = [
   { path : "", component: HomeComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path : "user", loadChildren:()=>import("./user/user.module").then(m=>m.UserModule)},
   { path : "admin", loadChildren:()=>import("./admin/admin.module").then(mod=>mod.AdminModule)},
   { path : "parent", component : ParentComponent},
-  { path : "child", component : ChildComponent}
+  { path : "child", component : ChildComponent},
+  { path : "pipe", component : PipeComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,32 @@
+<!-- <p>pipe works!</p>
+
+{{info | uppercase}}
+<br>
+{{info | lowercase}}
+<br>
+{{date | date : "long"}}
+<br>
+{{date | date : "short"}} -->
+
+<input type="search">search here
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>contact</th>
+        <th>city</th>
+    </tr>
+    <tr *ngFor="let data of tableDate">
+        <td>{{data.name}}</td>
+        <td>{{data.contact}}</td>
+        <td>{{data.city}}</td>
+    </tr>
+</table>
+
+
+<!-- 
+    There are two main categories of pipes in Angular:
+     pure pipes and impure pipes. Pure pipes are functions that always return the same output for the same input.
+      Impure pipes are functions that can return different outputs for the same input, 
+      depending on the state of the application.
+ -->

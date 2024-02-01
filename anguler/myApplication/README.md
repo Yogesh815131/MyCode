@@ -17,3 +17,5 @@ after taking pull my branch if u want to run my code >> npm i then ng s -o
 compo: "ng g c 'componantName'"
 
 create module:>> "ng g m 'ModuleName' --routing"
+
+create p :>> "ng g p search"

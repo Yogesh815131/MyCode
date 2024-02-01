@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-viewchild2',
@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class Viewchild2Component {
   cityname = "Mumbai";
   
+ 
+
 }

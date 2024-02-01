@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserSuccessComponent } from './user-success/user-success.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { PipeComponent } from './pipe/pipe.component';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { ChildComponent } from './child/child.component';
     UserSuccessComponent,
     ParentComponent,
     ChildComponent,
+    PipeComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

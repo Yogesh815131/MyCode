@@ -7,7 +7,6 @@ import { Viewchild2Component } from '../viewchild2/viewchild2.component';
   styleUrls: ['./viewchild1.component.css']
 })
 export class Viewchild1Component {
-
   name:any;
   @ViewChild(Viewchild2Component) viewChild2copm!: Viewchild2Component;
   @ViewChild('div_container') eleref! : ElementRef;
