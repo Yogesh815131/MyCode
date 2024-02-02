@@ -8,7 +8,8 @@
 <br>
 {{date | date : "short"}} -->
 
-<input type="search">search here
+<input type="search" [(ngModel)]="inputBoxValue">search here
+<button (click)="search()">Search</button>
 
 <table>
     <tr>
@@ -16,7 +17,7 @@
         <th>contact</th>
         <th>city</th>
     </tr>
-    <tr *ngFor="let data of tableDate">
+    <tr *ngFor="let data of tableDate | search:searchValue">
         <td>{{data.name}}</td>
         <td>{{data.contact}}</td>
         <td>{{data.city}}</td>
@@ -30,3 +31,20 @@
       Impure pipes are functions that can return different outputs for the same input, 
       depending on the state of the application.
  -->
+
+
+ <!-- 
+    create table
+    create table use html tag next create data array of object component.ts file and initiliaz data in table using
+    ngFor loop in table
+-->
+ <!-- 
+    pipe search logic
+    fist create one property in component.ts name="inputBoxValue" and bind this property input tag using "ngModel"
+    because get inpute box value and next here ngFor loop in use | symbol and pipe file selector name the colon ":"
+    and ngModel property "inputeModule" and next search.ts file "transform()" in function pass first parameter tableData
+    data type "any" and second parameter pass "ngModel" value "inputBoxValue" and next in function inputBoxValue
+    convert lowerCase and store one variable and tableData filter in filter first item convert array of object to
+    String use method "JSON.stringify(item)" and convert to LowerCase and next check in item includes or not inputBoxValue
+    complet......
+  -->

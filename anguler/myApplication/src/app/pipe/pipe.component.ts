@@ -10,7 +10,8 @@ export class PipeComponent {
   info = "Pipes are a way to format, filter, and manipulate data in Angular templates. They are functions that take an input value and return a transformed value. Pipes are useful because they allow you to change the appearance of data without modifying the underlying data source"
 
   date = new Date();  
-
+  inputBoxValue:any='';
+  searchValue:any='';
   tableDate = [
     {
       name:"Yogesh",
@@ -43,4 +44,8 @@ export class PipeComponent {
       city:"pune"
     }
   ]
+
+  search(){
+    this.searchValue = this.inputBoxValue
+  }
 }

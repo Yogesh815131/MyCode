@@ -18,4 +18,6 @@ compo: "ng g c 'componantName'"
 
 create module:>> "ng g m 'ModuleName' --routing"
 
-create p :>> "ng g p search"
+create pipe command:>> "ng g p anyname"
+create directive command:>> "ng g d anyname"
+create shared module command :>> "ng g m anyname"
