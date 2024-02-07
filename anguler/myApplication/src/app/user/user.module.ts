@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatIconModule} from '@angular/material/icon';
+import { ShareModule } from '../share/share.module';
 @NgModule({
   declarations: [
     UserloginComponent,
@@ -22,7 +23,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatInputModule, 
     MatRadioModule,
-    MatIconModule
+    MatIconModule,
+    ShareModule
   ]
 })
 export class UserModule { }

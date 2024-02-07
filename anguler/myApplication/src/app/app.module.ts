@@ -14,6 +14,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { SearchPipe } from './search.pipe';
+import { ShareModule } from './share/share.module';
 
 
 @NgModule({
@@ -28,12 +29,14 @@ import { SearchPipe } from './search.pipe';
     ChildComponent,
     PipeComponent,
     SearchPipe,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ShareModule
   ],
   providers: [],
   bootstrap: [AppComponent]

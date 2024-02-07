@@ -11,7 +11,7 @@
 
         <mat-form-field class="form-field">
             <mat-label>Mob No</mat-label>
-            <input type="text" matInput formControlName="Mob">
+            <input type="text" matInput formControlName="Mob" appOnlynumber>
             <mat-error *ngIf="signUpForm.get('Mob')?.errors?.['pattern']">Invalid Pattern</mat-error>
             <mat-error *ngIf="signUpForm.get('Mob')?.errors?.['maxlength']">Maximum 10 Number</mat-error>
             <mat-error>Number is required</mat-error>
