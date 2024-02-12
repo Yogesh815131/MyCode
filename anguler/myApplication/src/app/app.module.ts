@@ -9,12 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { TestComponent } from './test/test.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserSuccessComponent } from './user-success/user-success.component';
+import { UserSuccessComponent } from './user/user-success/user-success.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { SearchPipe } from './search.pipe';
 import { ShareModule } from './share/share.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ShareModule } from './share/share.module';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    ShareModule
+    ShareModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,55 @@
-{ 
-    "posts": [ 
-      { "id": "1", "title": "a title", "views": 100 }, 
-      { "id": "2", "title": "another title", "views": 200 } 
-    ], 
-    "comments": [ 
-      { "id": "1", "text": "a comment about post 1", "postId": "1" }, 
-      { "id": "2", "text": "another comment about post 1", "postId": "1" } 
-    ], 
-    "profile": { 
-      "name": "typicode" 
-    } 
-  }
+{
+  "admin": [
+    {
+      "id": "a00d",
+      "fullName": "Yogesh Jadhav",
+      "Mob": "9552001608",
+      "Pan": "TBGFD7658I",
+      "Gender": "Male",
+      "password": "Yogesh@123",
+      "confirmPass": "Yogesh@123",
+      "tc": true
+    },
+    {
+      "id": "0b2f",
+      "fullName": "Kajal Jadhav",
+      "Mob": "5615325165",
+      "Pan": "HFJYF0420J",
+      "Gender": "female",
+      "password": "Kajal@123",
+      "confirmPass": "Kajal@123",
+      "tc": true
+    },
+    {
+      "id": "a596",
+      "fullName": "Ajay Jadhav",
+      "Mob": "5468216954",
+      "Pan": "HGFDT1224J",
+      "Gender": "Male",
+      "password": "Ajay@123",
+      "confirmPass": "Ajay@123",
+      "tc": true
+    },
+    {
+      "id": "a1db",
+      "fullName": "Sagar G",
+      "Mob": "5136985485",
+      "Pan": "HGUNG6547H",
+      "Gender": "Male",
+      "password": "Sagar@123",
+      "confirmPass": "Sagar@123",
+      "tc": true
+    },
+    {
+      "id": "794a",
+      "fullName": "Yogita patil",
+      "Mob": "8455265456",
+      "Pan": "HFKHV5754J",
+      "Gender": "female",
+      "password": "Yogita@123",
+      "confirmPass": "Yogita@123",
+      "tc": true
+    }
+  ],
+  "owner": []
+}

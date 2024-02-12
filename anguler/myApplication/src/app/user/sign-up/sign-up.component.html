@@ -57,3 +57,11 @@
         <button mat-raised-button color="accent" class="btn" [disabled]="!signUpForm.valid" (click)="submit()">Submit</button>
     </form>
 </div>
+
+<!-- 
+    How to Create post first create service apicall use any service in service constructor declare HttpCliet and in appModule
+    import HttpClientModule in service create one method postApiCall in method use httpClient.post("url", and access data singupForm one varialble name is formDta)
+    in signup component.ts constructor declare apicall service "private apiCallService:ApiCallService" in submit() method pass singupForm data 
+    "this.apiCallService.postCallApi(this.signUpForm.value)" all data pass subcribe method like 
+    "this.apiCallService.postCallApi(this.signUpForm.value).subcribe(response=>{})" this data pass db.json file
+ -->

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiCallService } from 'src/app/api-call.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,7 +15,9 @@ export class SignUpComponent {
   isShowConfirmPass = false;
   isMatch = false;
 
-  constructor(private formBuilder : FormBuilder){}
+  constructor(private formBuilder : FormBuilder, 
+    private apiCallService:ApiCallService, private router:Router
+     ){}
 
   ngOnInit(){
     this.formDetails();
@@ -50,6 +54,9 @@ export class SignUpComponent {
 
   submit(){
     console.log("This signUpForm Value ", this.signUpForm.value);
+    this.apiCallService.postApiCall(this.signUpForm.value).subscribe(response =>{
+    this.router.navigateByUrl("/user/userlogin")
+    })
   }
 
   whiteSpaceRemoveValidator(includeValue:any){
