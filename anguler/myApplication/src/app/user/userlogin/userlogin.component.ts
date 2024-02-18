@@ -14,7 +14,7 @@ export class UserloginComponent {
   isValid = false;
   constructor(private dateService:DataService, private router:Router, private apiCallService:ApiCallService){}
 
-  OnInit(){
+  ngOnInit(){
     this.getUserData();
   }
 
@@ -41,11 +41,10 @@ export class UserloginComponent {
       this.router.navigateByUrl("/user/usersuccess")
     }else{
       this.isValid = true
-      this.router.navigateByUrl("/user/userlogin")
     }
 
-    this.dateService.userName = data.uName;
-    this.router.navigateByUrl('/user/usersuccess')
+    // this.dateService.userName = data.uName;
+    // this.router.navigateByUrl('/user/usersuccess')
   }
 
   toShowPassWord(){
